@@ -1,8 +1,19 @@
-library(httr)
-library(readxl)
-library(dplyr)
+#' Title
+#'
+#' @param path 
+#'
+#' @return
+#' @import httr
+#' @import readxl
+#' @import dplyr
+#' @export
+#'
+#' @examples
 
 Valmyndigheten_api<-function(path){
+  library(httr)
+  library(readxl)
+  library(dplyr)
   path=paste('download/',path,sep='')
   url<-modify_url('https://www.val.se/',path=path)
   resp<-GET(url)
@@ -29,6 +40,16 @@ Valmyndigheten_api<-function(path){
   )
 }
 
+#' Title
+#'
+#' @return
+#' @import httr
+#' @import readxl
+#' @import dplyr
+#' @export
+#'
+#' @examples
+
 get_p<-function(){
   response=Valmyndigheten_api(paste('18.14c1f613181ed0043d567ae/1663009000443/valresultat-riksdagen-preliminar-jamforande-statistik.xlsx',sep=''))
   response$content<-response$content[,colSums(is.na(response$content))<nrow(response$content)]
@@ -40,6 +61,16 @@ get_p<-function(){
 get_p()
 
 result_p<-get_p()
+
+#' Title
+#'
+#' @return
+#' @import httr
+#' @import readxl
+#' @import dplyr
+#' @export
+#'
+#' @examples
 
 get_p_a<-function(){
   response=Valmyndigheten_api(paste('18.14c1f613181ed0043d56f51/1663745020932/preliminar-riksdagsval-jamforande-statistik-2018-2022-med-uppsamlingsdistrikt-ny.xlsx',sep=''))
@@ -53,6 +84,12 @@ get_p_a()
 
 result_p_a<-get_p_a()
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 get_combined_data<-function(){
   merged_data<-merge(result_p,result_p_a,by='parties')
   return(merged_data)
