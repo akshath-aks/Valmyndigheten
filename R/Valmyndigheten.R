@@ -95,3 +95,5 @@ get_combined_data<-function(){
   return(merged_data)
 }
 View(get_combined_data())
+result_combined<-get_combined_data()
+result_combined
