@@ -60,7 +60,6 @@ get_p<-function(){
 }
 get_p()
 
-result_p<-get_p()
 
 #' Title
 #'
@@ -82,7 +81,6 @@ get_p_a<-function(){
 }
 View(get_p_a())
 
-result_p_a<-get_p_a()
 
 #' Title
 #'
@@ -91,9 +89,8 @@ result_p_a<-get_p_a()
 #'
 #' @examples
 get_combined_data<-function(){
-  merged_data<-merge(result_p,result_p_a,by='parties')
+  merged_data<-merge(get_p(),get_p_a(),by='parties')
   return(merged_data)
 }
 View(get_combined_data())
-result_combined<-get_combined_data()
-result_combined
+
