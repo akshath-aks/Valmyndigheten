@@ -55,7 +55,7 @@ get_p<-function(){
   response$content<-response$content[,colSums(is.na(response$content))<nrow(response$content)]
   response$content<-na.omit(response$content)
   response$content<-response$content%>% select(-8)
-  colnames(response$content)<-c('parties','voices 2022','shares 2022','Diff voices','Diff shares','voices 2018','shares 2018','mandate 2022','diff mandate','mandate 2018')
+  colnames(response$content)<-c('parties','voices 2022','shares 2022(%)','Diff voices','Diff shares(%)','voices 2018','shares 2018(%)','mandate 2022','Diff mandate','mandate 2018')
   return(as.data.frame(response$content))
 }
 get_p()
@@ -77,10 +77,10 @@ get_p_a<-function(){
   response$content<-response$content[,colSums(is.na(response$content))<nrow(response$content)]
   response$content<-na.omit(response$content)
   response$content<-response$content%>% select(-8)
-  colnames(response$content)<-c('parties','voices 2022(a)','shares 2022(a)','Diff voices(a)','Diff shares(a)','voices 2018(a)','shares 2018(a)','mandate 2022(a)','diff mandate(a)','mandate 2018(a)')
+  colnames(response$content)<-c('parties','voices 2022 including assembly districts','shares 2022 including assembly districts(%)','Diff voices including assembly districts','Diff shares including assembly districts(%)','voices 2018 including assembly districts','shares 2018 including assembly districts(%)','mandate 2022 including assembly districts','Diff mandate including assembly districts','mandate 2018 including assembly districts')
   return(as.data.frame(response$content))
 }
-get_p_a()
+View(get_p_a())
 
 result_p_a<-get_p_a()
 
