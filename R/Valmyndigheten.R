@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param path 
+#' @param path specifies the path for excel file to be downloaded
 #'
 #' @return
 #' @import httr
@@ -11,9 +11,6 @@
 #' @examples
 
 Valmyndigheten_api<-function(path){
-  library(httr)
-  library(readxl)
-  library(dplyr)
   path=paste('download/',path,sep='')
   url<-modify_url('https://www.val.se/',path=path)
   resp<-GET(url)
@@ -46,6 +43,7 @@ Valmyndigheten_api<-function(path){
 #' @import httr
 #' @import readxl
 #' @import dplyr
+#' @importFrom stats na.omit
 #' @export
 #'
 #' @examples
@@ -67,6 +65,7 @@ get_p()
 #' @import httr
 #' @import readxl
 #' @import dplyr
+#' @importFrom stats na.omit
 #' @export
 #'
 #' @examples
@@ -79,7 +78,7 @@ get_p_a<-function(){
   colnames(response$content)<-c('parties','voices 2022 including assembly districts','shares 2022 including assembly districts(%)','Diff voices including assembly districts','Diff shares including assembly districts(%)','voices 2018 including assembly districts','shares 2018 including assembly districts(%)','mandate 2022 including assembly districts','Diff mandate including assembly districts','mandate 2018 including assembly districts')
   return(as.data.frame(response$content))
 }
-View(get_p_a())
+get_p_a()
 
 
 #' Title
@@ -92,5 +91,5 @@ get_combined_data<-function(){
   merged_data<-merge(get_p(),get_p_a(),by='parties')
   return(merged_data)
 }
-View(get_combined_data())
+get_combined_data()
 

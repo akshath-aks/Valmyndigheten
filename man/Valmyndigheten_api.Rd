@@ -7,7 +7,7 @@
 Valmyndigheten_api(path)
 }
 \arguments{
-\item{path}{}
+\item{path}{specifies the path for excel file to be downloaded}
 }
 \description{
 Title
