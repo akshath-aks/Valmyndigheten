@@ -2,7 +2,7 @@ library(httr)
 library(readxl)
 library(dplyr)
 
-#' Class For Retrieving Data From Valmyndigheten XML.
+#' Class For Converting Raw Data to Parsed Data From Valmyndigheten XML.
 #'
 #' @param path specifies the path for excel file to be downloaded
 #'
