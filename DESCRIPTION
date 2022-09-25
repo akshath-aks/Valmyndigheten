@@ -11,3 +11,6 @@ Description: Getting the data of preliminary election results, polling station v
 License: GPL-3 + file LICENSE
 RoxygenNote: 7.2.1
 Imports: dplyr, httr, readxl
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
