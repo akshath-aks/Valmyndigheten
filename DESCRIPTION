@@ -1,11 +1,13 @@
 Package: Valmyndigheten
 Type: Package
-Title: What the package does (short line)
+Title: Package retrieves Data from Valmyndigheten XML 
 Version: 1.0
 Date: 2022-09-23
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does.
+Author: c(person('Akshath','Srinivas','akssr921@student.liu.se',role=c('aut')),
+    person('Yaning','Wang','yanwa579@student.liu.se',role=c('aut')))
+Maintainer: Akshath, yaning <akssr921@student.liu.se>
+Description: Getting the data of preliminary election results, polling station vote count 
+    and including assembly districts count from excel files present in Valmyndigheten XML.
 License: GPL-3 + file LICENSE
 RoxygenNote: 7.2.1
 Imports: dplyr, httr, readxl

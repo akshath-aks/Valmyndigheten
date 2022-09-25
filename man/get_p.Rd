@@ -2,10 +2,13 @@
 % Please edit documentation in R/Valmyndigheten.R
 \name{get_p}
 \alias{get_p}
-\title{Title}
+\title{Getting The election result data from polling station count excel file}
 \usage{
 get_p()
 }
+\value{
+The cleaned data from excel file
+}
 \description{
-Title
+Getting The election result data from polling station count excel file
 }

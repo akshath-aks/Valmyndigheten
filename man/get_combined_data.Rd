@@ -2,10 +2,13 @@
 % Please edit documentation in R/Valmyndigheten.R
 \name{get_combined_data}
 \alias{get_combined_data}
-\title{Title}
+\title{Combined data of polling station counts and assembly districts}
 \usage{
 get_combined_data()
 }
+\value{
+combined data from get_p() and get_p_a() functions.
+}
 \description{
-Title
+Combined data of polling station counts and assembly districts
 }

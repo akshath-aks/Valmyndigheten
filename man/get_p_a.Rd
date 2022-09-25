@@ -2,10 +2,13 @@
 % Please edit documentation in R/Valmyndigheten.R
 \name{get_p_a}
 \alias{get_p_a}
-\title{Title}
+\title{Getting The election result data including assembly district}
 \usage{
 get_p_a()
 }
+\value{
+The cleaned data from excel file
+}
 \description{
-Title
+Getting The election result data including assembly district
 }

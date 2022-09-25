@@ -2,13 +2,16 @@
 % Please edit documentation in R/Valmyndigheten.R
 \name{Valmyndigheten_api}
 \alias{Valmyndigheten_api}
-\title{Title}
+\title{Class For Retrieving Data From Valmyndigheten XML.}
 \usage{
 Valmyndigheten_api(path)
 }
 \arguments{
 \item{path}{specifies the path for excel file to be downloaded}
 }
+\value{
+Retrieve Parsed data Contents of the Excel for the given path(url)
+}
 \description{
-Title
+Class For Retrieving Data From Valmyndigheten XML.
 }
