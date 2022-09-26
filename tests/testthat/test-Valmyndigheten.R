@@ -6,11 +6,13 @@ test_that("testing Valmyndigheten_api function can return a given value for a sp
   expect_equal(result[[1]]$Parti...1[2], "Centerpartiet")
 })
 
-# test_that("with more than one input Valmyndigheten_api does not work.",{
-#     length(result_path)==2
-#     expect_error(Valmyndigheten_api(result_path))
-# 
-# })
+more_than_one_path<-c('18.14c1f613181ed0043d567ae/1663009000443/valresultat-riksdagen-preliminar-jamforande-statistik.xlsx',
+               '18.14c1f613181ed0043d56f51/1663745020932/preliminar-riksdagsval-jamforande-statistik-2018-2022-med-uppsamlingsdistrikt-ny.xlsx')
+
+test_that("with more than one input Valmyndigheten_api does not work.",{
+    expect_error(Valmyndigheten_api(more_than_one_path))
+
+})
 
 test_that("with the wrong input Valmyndigheten_api does not work.",{
   result_path<-'8'
