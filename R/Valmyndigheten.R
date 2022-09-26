@@ -14,6 +14,10 @@ library(dplyr)
 #'
 
 Valmyndigheten_api<-function(path){
+  if (length(path)>1){
+    stop('path cannot take more than one input')
+  }
+  
   path=paste('download/',path,sep='')
   url<-modify_url('https://www.val.se/',path=path) # using modify_url to attach path
   resp<-GET(url)

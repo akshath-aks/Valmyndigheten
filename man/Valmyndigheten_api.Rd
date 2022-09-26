@@ -2,7 +2,7 @@
 % Please edit documentation in R/Valmyndigheten.R
 \name{Valmyndigheten_api}
 \alias{Valmyndigheten_api}
-\title{Class For Retrieving Data From Valmyndigheten XML.}
+\title{Class For Converting Raw Data to Parsed Data From Valmyndigheten XML.}
 \usage{
 Valmyndigheten_api(path)
 }
@@ -13,5 +13,5 @@ Valmyndigheten_api(path)
 Retrieve Parsed data Contents of the Excel for the given path(url)
 }
 \description{
-Class For Retrieving Data From Valmyndigheten XML.
+Class For Converting Raw Data to Parsed Data From Valmyndigheten XML.
 }
