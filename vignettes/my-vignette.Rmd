@@ -30,18 +30,31 @@ The Package can be downloaded from.
     devtools::install_github("akshath-aks/Valmyndigheten")
 
 **Vignette**
+
 After installation run the code below to find vignettes.
     
     browseVignettes('Valmyndigheten')
     
+**Shiny-app**
+
+To view visualization of the retrieved data, run the below code.
+
+    runGitHub('shiny-app','akshath-aks')
+    
+**Attributes defined in the Class **    
+
+    Linreg Class contains following attribute
+        *Content: Parsed data
+        *Path: Path of the data in excel file.
+        *response: Response from the GET function.
+
 **Parameter in the package **
 
-path
-specifies the path for excel file to be downloaded
+path :specifies the path for excel file to be downloaded
 
 **Methods**
 
-1.Valmyndigheten_api()
+1.Class : Valmyndigheten_api()
 
 Retrieve Parsed data Contents of the Excel for the given path(url)
 

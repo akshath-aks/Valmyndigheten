@@ -10,7 +10,7 @@ library(dplyr)
 #' @import httr
 #' @import readxl
 #' @import dplyr
-#' @export
+#' @export Valmyndigheten_api
 #'
 
 Valmyndigheten_api<-function(path){
