@@ -3,8 +3,8 @@ Type: Package
 Title: Package Retrieves Data from Valmyndigheten XML 
 Version: 1.0
 Date: 2022-09-23
-Author: c(person('Akshath','Srinivas','akssr921@student.liu.se',role=c('aut')),
-    person('Yaning','Wang','yanwa579@student.liu.se',role=c('aut')))
+Author: c(person('Akshath Srinivas','akssr921@student.liu.se',role=c('aut')),
+    person('Yaning Wang','yanwa579@student.liu.se',role=c('aut')))
 Maintainer: Akshath, yaning <akssr921@student.liu.se>
 Description: Getting the data of preliminary election results, polling station vote count 
     and including assembly districts count from excel files present in Valmyndigheten XML.
