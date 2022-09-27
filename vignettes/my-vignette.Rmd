@@ -73,11 +73,12 @@ combined data from get_p() and get_p_a() functions(Combine the data of polling s
 
 **Examples**
 
-     ```{r,include=TRUE,eval=TRUE,echo=TRUE}
+    ```{r,include=TRUE,eval=TRUE,echo=TRUE}
+    
+    path<-'18.14c1f613181ed0043d567ae/1663009000443/valresultat-riksdagen-preliminar-jamforande-statistik.xlsx'
+    
+    ```
 
-      path<-'18.14c1f613181ed0043d567ae/1663009000443/valresultat-riksdagen-preliminar-jamforande-statistik.xlsx'
-        
-      ```
       
 After calling the above function it returns
 
