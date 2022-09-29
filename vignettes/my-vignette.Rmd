@@ -130,4 +130,3 @@ Getting combined data.
     
     ```
     
-          
