@@ -44,7 +44,7 @@ To view visualization of the retrieved data, run the below code.
     
 **Attributes defined in the Class **    
 
-    Linreg Class contains following attribute
+    Valmyndigheten_api Class contains following attribute
         *Content: Parsed data
         *Path: Path of the data in excel file.
         *response: Response from the GET function.
