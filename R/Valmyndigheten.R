@@ -1,7 +1,3 @@
-library(httr)
-library(readxl)
-library(dplyr)
-
 #' Class For Converting Raw Data to Parsed Data From Valmyndigheten XML.
 #'
 #' @param path specifies the path for excel file to be downloaded
@@ -19,11 +15,11 @@ Valmyndigheten_api<-function(path){
   }
   
   path=paste('download/',path,sep='')
-  url<-modify_url('https://www.val.se/',path=path) # using modify_url to attach path
-  resp<-GET(url)
+  url<-httr::modify_url('https://www.val.se/',path=path) # using modify_url to attach path
+  resp<-httr::GET(url)
   
   # stopping it if the http_type is not expected output.
-  if(http_type(resp)!='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+  if(httr::http_type(resp)!='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
     stop('API did not return proper output',call. = FALSE)
   }
 
@@ -34,10 +30,10 @@ Valmyndigheten_api<-function(path){
   writeBin(raw,tmp)
   
   # getting parsed data
-  parsed<-read_excel(tmp)
+  parsed<-readxl::read_excel(tmp)
   
   # stopping if the status code is not 200
-  if(status_code(resp)!=200){
+  if(httr::status_code(resp)!=200){
     stop('API Request failed',call. = FALSE)
   }
   
@@ -73,7 +69,7 @@ get_p<-function(){
   response$content<-na.omit(response$content)
   
   # removing duplicate column
-  response$content<-response$content%>% select(-8)
+  response$content<-response$content%>% dplyr::select(-8)
   colnames(response$content)<-c('parties','voices 2022','shares 2022(%)','Diff voices','Diff shares(%)','voices 2018','shares 2018(%)','mandate 2022','Diff mandate','mandate 2018')
   
   return(as.data.frame(response$content)) # returning as data.frame
@@ -101,7 +97,7 @@ get_p_a<-function(){
   response$content<-na.omit(response$content)
   
   # removing duplicate column
-  response$content<-response$content%>% select(-8)
+  response$content<-response$content%>% dplyr::select(-8)
   colnames(response$content)<-c('parties','voices 2022 including assembly districts','shares 2022 including assembly districts(%)','Diff voices including assembly districts','Diff shares including assembly districts(%)','voices 2018 including assembly districts','shares 2018 including assembly districts(%)','mandate 2022 including assembly districts','Diff mandate including assembly districts','mandate 2018 including assembly districts')
   
   return(as.data.frame(response$content))
